@@ -24,6 +24,7 @@ public class Update extends HttpServlet {
         response.setHeader("Cache-Control","no-cache");
         response.setContentType("application/json");
         response.addHeader("Access-Control-Allow-Origin", "*");
+        String curId=request.getParameter("curId");
         String idu=request.getParameter("id");
         String RGBu=request.getParameter("RGB");
         String Ru=request.getParameter("R");
@@ -32,8 +33,8 @@ public class Update extends HttpServlet {
         String Predu=request.getParameter("Pred");
             StringBuilder json = new StringBuilder();
             json.append("[");      
-      String result;      
-      String Query="UPDATE COLORS SET columncolors ='{\"id\" :\""+idu+"\",\"RGB\" :\""+RGBu+"\",\"R\" :\""+Ru+"\",\"G\" :\""+Gu+"\",\"B\" :\""+Bu+"\",\"PREDICTION\" :\""+Predu+"\"}' WHERE JSON_EXTRACT(columncolors,'$.id')="+"'"+idu+"';";      
+      String result;
+      String Query="UPDATE COLORS SET columncolors ='{\"id\" :\""+idu+"\",\"RGB\" :\""+RGBu+"\",\"R\" :\""+Ru+"\",\"G\" :\""+Gu+"\",\"B\" :\""+Bu+"\",\"PREDICTION\" :\""+Predu+"\"}' WHERE JSON_EXTRACT(columncolors,'$.id')="+"'"+curId+"';";      
     try{
         String Driver ="com.mysql.cj.jdbc.Driver";
         String Url = "jdbc:mysql://localhost/dbcolors";
