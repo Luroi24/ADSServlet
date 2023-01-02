@@ -1,0 +1,22 @@
+DROP DATABASE IF EXISTS dbcolors;
+
+CREATE DATABASE dbcolors;
+use dbcolors;
+CREATE TABLE login (
+ idLOGIN INT NOT NULL AUTO_INCREMENT,
+ USERNAME VARCHAR(45) NULL ,
+ PASSWORD VARCHAR(45) NULL ,
+ PRIMARY KEY (idLOGIN) );
+INSERT INTO login (USERNAME, PASSWORD) VALUES ('admin', '1234');
+
+CREATE TABLE colors (
+ id  INT not null auto_increment primary key,
+columncolors JSON);
+
+INSERT INTO COLORS(columncolors) values('{"id" : "1",  "RGB" : "caso1" , "R" : "1","G" : "2","B" : "3","PREDICTION" : "SISINONOSI" }');
+INSERT INTO COLORS(columncolors) values('{"id" : "2",  "RGB" : "Caso2" , "R" : "1","G" : "2","B" : "3","PREDICTION" : "SISINONOSI"  }');
+INSERT INTO COLORS(columncolors) values('{"id" : "3", "RGB" : "CASO3" , "R" : "3","G" : "3","B" : "3","PREDICTION" : "AAAAAAAAA"  }');
+
+INSERT INTO COLORS(columncolors) values('{"id" : "4", "RGB" : "CASO4" , "R" : "3","G" : "3","B" : "3","PREDICTION" : "BBBBB"  }');
+
+
